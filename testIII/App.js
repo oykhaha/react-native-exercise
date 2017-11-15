@@ -9,45 +9,40 @@ import {
     TouchableHighlight,
     ScrollView
 } from 'react-native';
-import Share from './src/component/Share';
 import AlerSelect from './src/component/AlerSelect';
-import ZoomImg from './src/component/ShowImg';
-
-const images = [{
-    url: 'https://avatars2.githubusercontent.com/u/7685233?v=3&s=460'
-}, {
-    url: 'https://ooo.0o0.ooo/2017/03/31/58de0e9b287f6.jpg'
-}, {
-    url: 'https://ooo.0o0.ooo/2017/03/31/58de0e9b28328.jpg'
-}]
+import ViewImg from './src/component/ImgView';
+import Share from './src/component/Share';
 
 
 export default class App extends Component {
     constructor() {
-        super();
-        this.state = {
-            ImgZoomVisible: false,
-            AlerVisible: false,
-            ShareVisible: false,
-            Imgsource: null,
-            id: 1
-        };
-    }
-    onSetPop = () => {
+            super();
+            this.state = {
+                ImgZoomVisible: false,
+                shareVisible: false,
+                //AlerVisible: false,
+                id: 0
+            };
+        }
+        /*onSetPop = () => {
+            this.setState({
+                ShareVisible: !this.state.ShareVisible,
+                AlerVisible: !this.state.AlerVisible
+            });
+        }
+        onSetAler = () => {
+            this.setState({
+                AlerVisible: !this.state.AlerVisible
+            });
+        }*/
+    poptoShare = () => {
         this.setState({
-            ShareVisible: !this.state.ShareVisible,
-            AlerVisible: !this.state.AlerVisible
+            shareVisible: !this.state.shareVisible
         });
     }
-
-    onSetShare = () => {
+    onSetImg = () => {
         this.setState({
-            ShareVisible: !this.state.ShareVisible
-        });
-    }
-    onSetAler = () => {
-        this.setState({
-            AlerVisible: !this.state.AlerVisible
+            ImgZoomVisible: !this.state.ImgZoomVisible
         });
     }
     onSetImg1 = () => {
@@ -73,43 +68,41 @@ export default class App extends Component {
         return (
             <ScrollView>
           <View style={styles.content}>
-             <Share
-               onClick={this.onSetShare}
-               ShareVisible={this.state.ShareVisible}
+              <ViewImg
+                index={this.state.id}
+                ImgZoomVisible={this.state.ImgZoomVisible}
+                onSetImg={this.onSetImg}
+                poptoShare={this.poptoShare}
+               />
+                <Share
+                 ShareVisible={this.state.shareVisible}
+                 index={this.state.id}
+                 onClick={this.poptoShare}
               />
-
-              <AlerSelect
+              {/*<AlerSelect
                 onClick={this.onSetAler}
                 index={this.state.id}
                 onPop={this.onSetPop}
                 AlerVisible={this.state.AlerVisible}
-              />
-
-              <ZoomImg
-                source={require('./src/img/3.jpg')}
-                onClick={this.onSetImg1}
-                onPoptoAler={this.onSetAler}
-                ImgZoomVisible={this.state.ImgZoomVisible}
-                index={this.state.id}
-              />
+              />*/}
 
             <Text style={styles.txt}>Zoom Image Examples! Try to click them~</Text>
             <View style={styles.imgItem}>
-             <TouchableHighlight onPress={this.onSetImg1}>
+              <TouchableHighlight onPress={this.onSetImg1}>
                <Image
                 source={require('./src/img/1.png')}
                 style={styles.img}
-                />
-             </TouchableHighlight>
+               />
+              </TouchableHighlight>
             </View>
 
           <View style={styles.imgItem}>
-            <TouchableHighlight onPress={this.onSetImg2} >
+            <TouchableHighlight onPress={this.onSetImg2}>
                <Image
                 source={require('./src/img/2.jpg')}
                 style={styles.img}
-                />
-             </TouchableHighlight>
+               />
+              </TouchableHighlight>
           </View>
 
          <View style={styles.imgItem}>
@@ -117,13 +110,8 @@ export default class App extends Component {
                <Image
                 source={require('./src/img/3.jpg')}
                 style={styles.img}
-                />
-             </TouchableHighlight>
-
-
-
-
-
+               />
+              </TouchableHighlight>
           </View>
         </View>
       </ScrollView>

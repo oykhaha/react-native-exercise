@@ -33,10 +33,8 @@ class AlerSelect extends React.Component {
                <Text onPress={this.props.onClick} style={styles.touchabale}></Text>
                   <View style={styles.subcontainer}>
                    <Text onPress={this.props.onPop}  style={styles.AlerText}>发送给朋友</Text>
+                   <Text style={styles.AlerText}>下载</Text>
                    <Text style={styles.AlerText}>举报</Text>
-                   <DownloadFile
-                     imgIndex={this.props.index}
-                   />
                    <Text onPress={this.props.onClick} style={styles.AlerText}>取消</Text>
 
                  </View>

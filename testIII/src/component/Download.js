@@ -7,7 +7,13 @@ import {
     StyleSheet
 } from 'react-native';
 import RNFS from 'react-native-fs';
+import {
+    createIconSetFromIcoMoon,
+} from 'react-native-vector-icons';
+import icomoonConfig from '../../config/iconImg';
 
+
+const Icon = createIconSetFromIcoMoon(icomoonConfig);
 const imgList = [
     'https://avatars2.githubusercontent.com/u/7685233?v=3&s=460',
     'https://ooo.0o0.ooo/2017/03/31/58de0e9b287f6.jpg',
@@ -15,12 +21,9 @@ const imgList = [
 ]
 
 export default class DownloadFile extends Component {
-    constructor() {
-        super();
-    }
-    ondownload = () => {
+    handledownload = () => {
         const downloadDest = `${RNFS.DocumentDirectoryPath}/${((Math.random() * 1000) | 0)}.jpg`;
-        const formUrl = imgList[this.props.imgIndex];
+        const formUrl = imgList[this.props.index];
         const DownloadFileOptions = {
             fromUrl: formUrl, // URL to download file from
             toFile: downloadDest, // Local filesystem path to save the file to
@@ -53,13 +56,23 @@ export default class DownloadFile extends Component {
     }
     render() {
         return (
-            <Text onPress={this.ondownload} style={styles.AlerText}>保存图片</Text>
+            <View style={styles.iconview}>
+                <Icon name="arrow-down2"  color='#3F3737' style={styles.icon} onPress={this.handledownload} />
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    AlerText: {
-        margin: 10
+    iconview: {
+        height: 55,
+        width: 55,
+        backgroundColor: '#FFFFFF',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    icon: {
+        fontSize: 40
     }
 });
