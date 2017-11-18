@@ -57,7 +57,7 @@ export default class DownloadFile extends Component {
     render() {
         return (
             <View style={styles.iconview}>
-                <Icon name="arrow-down2"  color='#3F3737' style={styles.icon} onPress={this.handledownload} />
+                <Icon name="download"  color='#3F3737' style={styles.funcicon} onPress={this.handledownload} />
             </View>
         );
     }
@@ -65,14 +65,13 @@ export default class DownloadFile extends Component {
 
 const styles = StyleSheet.create({
     iconview: {
-        height: 55,
-        width: 55,
-        backgroundColor: '#FFFFFF',
+        height: 40,
+        width: 40,
         justifyContent: 'center',
         alignItems: 'center',
 
     },
-    icon: {
-        fontSize: 40
-    }
+    funcicon: {
+        fontSize: 35
+    },
 });

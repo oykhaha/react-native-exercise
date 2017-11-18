@@ -43,7 +43,7 @@ class Share extends Component {
                        <View style ={styles.PopSubContainer}>
 
                               <View style ={styles.PopLink}>
-                                <View style ={styles.PopLinkItemfirst}>
+                                <View style ={styles.PopLinkItem}>
                                     <View style={styles.iconview}>
                                         <Icon name="wechat"  color='#45E69A' style={styles.icon} />
                                     </View>
@@ -54,7 +54,7 @@ class Share extends Component {
                                    <View style={styles.iconview}>
                                     <Icon name="qq"  color='#2C9EEF' style={styles.icon} />
                                    </View>
-                                    <Text style ={styles.PopLinkText}>QQ</Text>
+                                    <Text style ={styles.PopLinkText}>QQ好友</Text>
                                 </View>
                                 <View style ={styles.PopLinkItem}>
                                    <View style={styles.iconview}>
@@ -68,36 +68,36 @@ class Share extends Component {
                                    </View>
                                     <Text style ={styles.PopLinkText}>github</Text>
                                 </View>
-                                <View style ={styles.PopLinkItemlast}>
-                                    <View style={styles.iconview}>
-                                    <Icon name="mail4"  color='#DF2121' style={styles.icon} />
-                                    </View>
-                                    <Text style ={styles.PopLinkText}>邮件</Text>
-                                </View>
+
 
                             </View>
 
 
                             <View style={styles.otheroption}>
-                                <View style ={styles.PopLinkItemfirst}>
+                                <View style ={styles.PopLinkItem}>
                                    <View style={styles.iconview}>
-                                     <Icon name="attachment" style={styles.icon} />
+                                     <Icon name="link" style={styles.funcicon} />
                                    </View>
                                    <Text style ={styles.PopLinkText}>链接</Text>
                                 </View>
-                                <View style ={styles.PopLinkItem}>
 
+                               <View style ={styles.PopLinkItem}>
+                                   <View style={styles.iconview}>
+                                     <Icon name="report" style={styles.funcicon} />
+                                   </View>
+                                   <Text style ={styles.PopLinkText}>举报</Text>
+                                </View>
+                                 <View style ={styles.PopLinkItem}>
                                      <DownloadFile
                                        index={this.props.index}
                                      />
-
-                                   <Text style ={styles.PopLinkText}>下载</Text>
+                                   <Text style ={styles.PopLinkText}>保存</Text>
                                 </View>
-                               <View style ={styles.PopLinkItem}>
-                                   <View style={styles.iconview}>
-                                     <Icon name="cross" style={styles.icon} />
-                                   </View>
-                                   <Text style ={styles.PopLinkText}>举报</Text>
+                                <View style ={styles.PopLinkItem}>
+                                    <View style={styles.iconview}>
+                                    <Icon name="mail4"  style={styles.funcicon} />
+                                    </View>
+                                    <Text style ={styles.PopLinkText}>邮件</Text>
                                 </View>
                             </View>
                             <View style={styles.closeview}>
@@ -151,6 +151,8 @@ const styles = StyleSheet.create({
         left: 0,
         alignItems: 'center',
         borderBottomWidth: 1,
+        borderColor:'#F6F0F0',
+        justifyContent:'space-around',
         width: width
 
     },
@@ -162,38 +164,33 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: height * 0.21,
         alignItems: 'center',
+        justifyContent:'space-around'
     },
 
     iconview: {
-        height: 55,
-        width: 55,
-        backgroundColor: '#FFFFFF',
+        height: 40,
+        width: 40,
         justifyContent: 'center',
         alignItems: 'center',
 
     },
     icon: {
-        fontSize: 40
+        fontSize: 35
     },
-    PopLinkItemfirst: {
-        marginLeft: (width - 275) / 6,
-        marginTop: 5,
-        marginRight: (width - 275) / 12
+    funcicon:{
+        fontSize:32
     },
+
     PopLinkItem: {
-        marginHorizontal: (width - 275) / 12,
         marginTop: 5,
         alignItems: 'center',
 
     },
-    PopLinkItemlast: {
-        marginRight: (width - 275) / 6,
-        marginLeft: (width - 275) / 12,
-        marginTop: 5,
-    },
+
     PopLinkText: {
         textAlign: 'center',
-        padding: 5
+        padding: 5,
+        fontSize:12
     },
     closeview: {
         position: 'absolute',

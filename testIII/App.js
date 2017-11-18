@@ -65,8 +65,8 @@ export default class App extends Component {
     }
 
     render() {
-        return (
-            <ScrollView>
+      return (
+        <ScrollView>
           <View style={styles.content}>
               <ViewImg
                 index={this.state.id}

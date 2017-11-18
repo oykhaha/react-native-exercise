@@ -35,32 +35,41 @@ export default class ViewImg extends Component {
             id_1: 0,
             id_2: 1,
             id_3: 2,
+            swipershow:false
         };
     }
 
+     componentDidMount(){
+        setTimeout(()=>{
+            this.setState({
+                swipershow:true
+            });
+        },0)
+    }
 
 
     render() {
-        return (
-            <View>
-              <Modal
-                visible={this.props.ImgZoomVisible}
-                transparent={true}
-                onRequestClose={() => {alert("Modal has been closed.")}}
-              >
-               <Swiper
-                 loadMinimal
-                 loadMinimalSize={1}
-                 index={this.props.index}
-                 style={styles.wrapper}
-                 loop={false}
+     if (this.state.swipershow) {
+       return (
+        <View>
+          <Modal
+            visible={this.props.ImgZoomVisible}
+            transparent={true}
+            onRequestClose={() => {alert("Modal has been closed.")}}
+          >
+            {/*<Swiper
+              loadMinimal
+              loadMinimalSize={1}
+              index={this.props.index}
+              style={styles.wrapper}
+              loop={false}
                >
-                  <ImageZoom
-                   onSetImg={this.props.onSetImg}
-                   poptoShare={this.props.poptoShare}
-                   index={this.state.id_1}
-               />
-               <ImageZoom
+              <ImageZoom
+                onSetImg={this.props.onSetImg}
+                poptoShare={this.props.poptoShare}
+                index={this.state.id_1}
+              />
+            <ImageZoom
                  onSetImg={this.props.onSetImg}
                  poptoShare={this.props.poptoShare}
                  index={this.state.id_2}
@@ -70,18 +79,33 @@ export default class ViewImg extends Component {
                  poptoShare={this.props.poptoShare}
                  index={this.state.id_3}
                />
-               </Swiper>
-               {/*<ImageZoom
+               </Swiper>*/}
+               <ImageZoom
                  onSetImg={this.props.onSetImg}
                  poptoShare={this.props.poptoShare}
-                 index={this.props.index}
-               />*/}
+                 index={this.state.id_1}
+               />
 
 
                </Modal>
             </View>
 
         );
+     }else{
+        return(
+          <Modal
+            visible={this.props.ImgZoomVisible}
+            transparent={true}
+            onRequestClose={() => {alert("Modal has been closed.")}}
+          >
+          <ImageZoom
+            onSetImg={this.props.onSetImg}
+            poptoShare={this.props.poptoShare}
+            index={this.state.id_1} />
+          </Modal>
+        );
+     }
+
     }
 
 }
