@@ -29,41 +29,43 @@ const imgList = [
 ]
 
 export default class ViewImg extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id_1: 0,
-            id_2: 1,
-            id_3: 2,
-            swipershow:false
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      id_1: 0,
+      id_2: 1,
+      id_3: 2,
+      swipershow:false
+    };
+}
 
-     componentDidMount(){
-        setTimeout(()=>{
-            this.setState({
-                swipershow:true
-            });
-        },0)
-    }
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setState({
+        swipershow:true
+      });
+    },0)
+  }
 
 
-    render() {
-     if (this.state.swipershow) {
-       return (
-        <View>
+  render(){
+    if(this.state.swipershow){
+      return (
+        <View style={{position:'absolute'}}>
           <Modal
-            visible={this.props.ImgZoomVisible}
+            visible={this.props.imgZoomVisible}
             transparent={true}
-            onRequestClose={() => {alert("Modal has been closed.")}}
+            onRequestClose={() =>
+              {alert("Modal has been closed.")}
+            }
           >
-            <Swiper
-              loadMinimal
-              loadMinimalSize={1}
-              index={this.props.index}
-              style={styles.wrapper}
-              loop={false}
-               >
+          <Swiper
+            loadMinimal
+            loadMinimalSize={1}
+            index={this.props.index}
+            style={styles.wrapper}
+            loop={false}
+           >
              {
                imgList.map((item,i)=>
                  <ImageZoom
@@ -71,10 +73,10 @@ export default class ViewImg extends Component {
                    poptoShare={this.props.poptoShare}
                    index={i}
                    key={i}
-               />)
+                 />)
 
              }
-               </Swiper>
+          </Swiper>
                {/*<ImageZoom
                  onSetImg={this.props.onSetImg}
                  poptoShare={this.props.poptoShare}
@@ -82,36 +84,32 @@ export default class ViewImg extends Component {
                />*/}
 
 
-               </Modal>
-            </View>
-
-        );
-     }else{
-        return(
-          <Modal
-            visible={this.props.ImgZoomVisible}
-            transparent={true}
-            onRequestClose={() => {alert("Modal has been closed.")}}
-          >
-          <ImageZoom
-            onSetImg={this.props.onSetImg}
-            poptoShare={this.props.poptoShare}
-            index={this.state.id_1} />
           </Modal>
-        );
+        </View>
+      );
+    }else{
+       return(
+         <Modal
+           visible={this.props.imgZoomVisible}
+           transparent={true}
+           onRequestClose={() => {alert("Modal has been closed.")}}
+         >
+           <ImageZoom
+             onSetImg={this.props.onSetImg}
+             poptoShare={this.props.poptoShare}
+             index={this.state.id_1} />
+         </Modal>
+       );
      }
-
-    }
-
+  }
 }
 
 const styles = StyleSheet.create({
-    img: {
-        borderWidth: 3,
-        width: 250,
-        height: 230,
-        borderColor: '#3D2929',
-        borderRadius: 5
-    },
-
+  img:{
+    borderWidth: 3,
+    width: 250,
+    height: 230,
+    borderColor: '#3D2929',
+    borderRadius: 5
+  }
 });

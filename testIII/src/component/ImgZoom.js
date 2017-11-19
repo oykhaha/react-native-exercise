@@ -27,59 +27,62 @@ let {
     height
 } = Dimensions.get('window');
 
-export default class ImageZoom extends Component {
-    render() {
-        return (
-            <View style={styles.maincontainer}>
-                 <View style={styles.content} >
-                   <PhotoView
-                   source={imgList[this.props.index]}
-                   minimumZoomScale={0.5}
-                   maximumZoomScale={3}
-                   onTap={this.props.onSetImg}
-                   onViewTap={this.props.onSetImg}
-                   androidScaleType='centerInside'
-                   style={{width:width*1,height:height*0.92}}
-                   />
-                  <Text onLongPress={this.props.poptoShare} style={styles.zIndextext}></Text>
-                 </View>
+export default class ImageZoom extends Component{
+  render(){
+    return (
+      <View style={styles.maincontainer}>
+        <View style={styles.content} >
+          <PhotoView
+            source={imgList[this.props.index]}
+            minimumZoomScale={0.5}
+            maximumZoomScale={3}
+            onTap={this.props.onSetImg}
+            onViewTap={this.props.onSetImg}
+            androidScaleType='centerInside'
+            style={{width:width*1,height:height*0.92}}
+          />
+          <Text
+            onLongPress={this.props.poptoShare}
+            style={styles.zIndextext}>
+          </Text>
+        </View>
                 {/*<View style={styles.footer}>
                   <Text style={styles.footertext}>保存原图</Text>
                 </View>*/}
-               </View>
-        );
-    }
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    maincontainer: {
-        right: 0,
-        left: 0,
-        top: 0,
-        bottom: 0,
-        position: 'absolute',
-        alignItems: 'center',
-        backgroundColor: '#070707',
-    },
-    zIndextext: {
-        right: 0,
-        left: 0,
-        top: 0,
-        bottom: 0,
-        position: 'absolute',
-        alignItems: 'center',
-        backgroundColor: 'transparent'
-    },
-    footer: {
-        height: 30,
-        position: 'absolute',
-        bottom: 0,
-    },
-    footertext: {
-        fontSize: 13,
-        borderWidth: 1,
-        borderColor: '#9A9494',
-        backgroundColor: '#F6F0F0',
-        padding: 2
-    },
+  maincontainer:{
+    right: 0,
+    left: 0,
+    top: 0,
+    bottom: 0,
+    position: 'absolute',
+    alignItems: 'center',
+    backgroundColor: '#070707',
+  },
+  zIndextext:{
+    right: 0,
+    left: 0,
+    top: 0,
+    bottom: 0,
+    position: 'absolute',
+    alignItems: 'center',
+    backgroundColor: 'transparent'
+  },
+  footer:{
+    height: 30,
+    position: 'absolute',
+    bottom: 0,
+  },
+  footertext: {
+    fontSize: 13,
+    borderWidth: 1,
+    borderColor: '#9A9494',
+    backgroundColor: '#F6F0F0',
+    padding: 2
+  },
 });
