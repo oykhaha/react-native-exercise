@@ -57,34 +57,29 @@ export default class ViewImg extends Component {
             transparent={true}
             onRequestClose={() => {alert("Modal has been closed.")}}
           >
-            {/*<Swiper
+            <Swiper
               loadMinimal
               loadMinimalSize={1}
               index={this.props.index}
               style={styles.wrapper}
               loop={false}
                >
-              <ImageZoom
-                onSetImg={this.props.onSetImg}
-                poptoShare={this.props.poptoShare}
-                index={this.state.id_1}
-              />
-            <ImageZoom
-                 onSetImg={this.props.onSetImg}
-                 poptoShare={this.props.poptoShare}
-                 index={this.state.id_2}
-               />
-               <ImageZoom
-                 onSetImg={this.props.onSetImg}
-                 poptoShare={this.props.poptoShare}
-                 index={this.state.id_3}
-               />
-               </Swiper>*/}
-               <ImageZoom
+             {
+               imgList.map((item,i)=>
+                 <ImageZoom
+                   onSetImg={this.props.onSetImg}
+                   poptoShare={this.props.poptoShare}
+                   index={i}
+                   key={i}
+               />)
+
+             }
+               </Swiper>
+               {/*<ImageZoom
                  onSetImg={this.props.onSetImg}
                  poptoShare={this.props.poptoShare}
                  index={this.state.id_1}
-               />
+               />*/}
 
 
                </Modal>

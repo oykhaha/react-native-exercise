@@ -158,13 +158,11 @@ const styles = StyleSheet.create({
     },
     otheroption: {
         flexDirection: 'row',
-        flex: 1,
         height: height * 0.21,
         width: width,
         position: 'absolute',
         top: height * 0.21,
         alignItems: 'center',
-        justifyContent:'space-around'
     },
 
     iconview: {
@@ -175,7 +173,7 @@ const styles = StyleSheet.create({
 
     },
     icon: {
-        fontSize: 35
+        fontSize:36
     },
     funcicon:{
         fontSize:32
@@ -183,6 +181,7 @@ const styles = StyleSheet.create({
 
     PopLinkItem: {
         marginTop: 5,
+        width:width*0.25,
         alignItems: 'center',
 
     },
