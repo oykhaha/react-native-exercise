@@ -1,13 +1,13 @@
 import React, {
-    Component
+  Component
 } from 'react';
 import {
-    StyleSheet,
-    View,
-    Text,
-    Image,
-    TouchableHighlight,
-    ScrollView
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableHighlight,
+  ScrollView
 } from 'react-native';
 import ViewImg from './src/component/ImgView';
 import Share from './src/component/Share';
@@ -16,10 +16,10 @@ import Share from './src/component/Share';
 export default class App extends Component {
   constructor() {
     super();
-      this.state = {
-      imgZoomVisible: false,
-      shareVisible: false,
-      id: 0
+    this.state = {
+    imgZoomVisible: false,
+    shareVisible: false,
+    id: 0
   };
 }
 
@@ -89,46 +89,46 @@ export default class App extends Component {
 
           <View style={styles.imgItem}>
             <TouchableHighlight onPress={this.setImg2}>
-               <Image
+              <Image
                 source={require('./src/img/2.jpg')}
                 style={styles.img}
-               />
-              </TouchableHighlight>
+              />
+            </TouchableHighlight>
           </View>
 
-         <View style={styles.imgItem}>
+          <View style={styles.imgItem}>
             <TouchableHighlight onPress={this.setImg3}>
-               <Image
+              <Image
                 source={require('./src/img/3.jpg')}
                 style={styles.img}
-               />
-              </TouchableHighlight>
+              />
+            </TouchableHighlight>
           </View>
         </View>
       </ScrollView>
-        );
-    }
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  content:{
+  content: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#EAD5F1'
   },
-  txt:{
+  txt: {
     fontSize: 16,
     marginTop: 50,
     color: '#333'
-    },
-  img:{
+  },
+  img: {
     borderWidth: 3,
     width: 250,
     height: 230,
     borderColor: '#3D2929',
     borderRadius: 5
   },
-  imgItem:{
+  imgItem: {
     justifyContent: 'center',
     alignItems: 'center',
     margin: 20

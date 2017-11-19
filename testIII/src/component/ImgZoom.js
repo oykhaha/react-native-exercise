@@ -1,14 +1,14 @@
 import React, {
-    Component
+  Component
 } from 'react';
 import {
-    Dimensions,
-    StyleSheet,
-    View,
-    Image,
-    Text,
-    Modal,
-    TouchableHighlight
+  Dimensions,
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  Modal,
+  TouchableHighlight
 } from 'react-native';
 import PhotoView from 'react-native-photo-view';
 
@@ -17,18 +17,18 @@ const loading_2 = require('../img/2.jpg')
 const loading_3 = require('../img/3.jpg')
 
 const imgList = [
-    loading_1,
-    loading_2,
-    loading_3
+  loading_1,
+  loading_2,
+  loading_3
 ]
 
 let {
-    width,
-    height
+  width,
+  height
 } = Dimensions.get('window');
 
-export default class ImageZoom extends Component{
-  render(){
+export default class ImageZoom extends Component {
+  render() {
     return (
       <View style={styles.maincontainer}>
         <View style={styles.content} >
@@ -55,7 +55,7 @@ export default class ImageZoom extends Component{
 }
 
 const styles = StyleSheet.create({
-  maincontainer:{
+  maincontainer: {
     right: 0,
     left: 0,
     top: 0,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#070707',
   },
-  zIndextext:{
+  zIndextext: {
     right: 0,
     left: 0,
     top: 0,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'transparent'
   },
-  footer:{
+  footer: {
     height: 30,
     position: 'absolute',
     bottom: 0,
@@ -84,5 +84,5 @@ const styles = StyleSheet.create({
     borderColor: '#9A9494',
     backgroundColor: '#F6F0F0',
     padding: 2
-  },
+  }
 });

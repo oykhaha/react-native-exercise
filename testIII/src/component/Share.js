@@ -1,38 +1,38 @@
 import React, {
-    Component,
+  Component,
 } from 'react';
 import {
-    Modal,
-    Text,
-    View,
-    Image,
-    StyleSheet,
-    ScrollView
+  Modal,
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  ScrollView
 } from 'react-native';
 import {
-    createIconSetFromIcoMoon,
+  createIconSetFromIcoMoon,
 } from 'react-native-vector-icons';
 import icomoonConfig from '../../config/iconImg';
 import RNFS from 'react-native-fs';
 
 let Dimensions = require('Dimensions');
 let {
-    width,
-    height
+  width,
+  height
 } = Dimensions.get('window')
 
 const Icon = createIconSetFromIcoMoon(icomoonConfig);
 
 const imgList = [
-    'https://avatars2.githubusercontent.com/u/7685233?v=3&s=460',
-    'https://ooo.0o0.ooo/2017/03/31/58de0e9b287f6.jpg',
-    'https://ooo.0o0.ooo/2017/03/31/58de0e9b28328.jpg'
+  'https://avatars2.githubusercontent.com/u/7685233?v=3&s=460',
+  'https://ooo.0o0.ooo/2017/03/31/58de0e9b287f6.jpg',
+  'https://ooo.0o0.ooo/2017/03/31/58de0e9b28328.jpg'
 ]
 
 class Share extends Component {
   static propTypes = {
         // modalVisible: PropTypes.string.isRequired,
-    }
+  }
   handledownload = () => {
     const downloadDest = `${RNFS.DocumentDirectoryPath}/${((Math.random() * 1000) | 0)}.jpg`;
     const formUrl = imgList[this.props.index];
@@ -61,13 +61,13 @@ class Share extends Component {
            .catch(err =>{
                console.log('err', err);
             });
-           }catch(e){
+           } catch(e) {
               console.log(error);
-           }
+             }
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Modal
         animationType="slide"
         visible={this.props.ShareVisible}
@@ -84,7 +84,7 @@ class Share extends Component {
                   <View style={styles.iconview}>
                     <Icon
                       name="wechat"
-                      color='#45E69A'
+                      color="#45E69A"
                       style={styles.icon}
                     />
                   </View>
@@ -95,7 +95,7 @@ class Share extends Component {
                   <View style={styles.iconview}>
                     <Icon
                       name="qq"
-                      color='#2C9EEF'
+                      color="#2C9EEF"
                       style={styles.icon}
                     />
                  </View>
@@ -106,7 +106,7 @@ class Share extends Component {
                   <View style={styles.iconview}>
                     <Icon
                       name="sina"
-                      color='#F03131'
+                      color="#F03131"
                       style={styles.icon}
                     />
                   </View>
@@ -117,7 +117,7 @@ class Share extends Component {
                   <View style={styles.iconview}>
                     <Icon
                       name="github"
-                      olor='#3F3737'
+                      color="#3F3737"
                       style={styles.icon}
                     />
                   </View>
@@ -128,7 +128,10 @@ class Share extends Component {
               <View style={styles.otheroption}>
                 <View style={styles.PopLinkItem}>
                   <View style={styles.iconview}>
-                    <Icon name="link" style={styles.funcicon} />
+                    <Icon
+                      name="link"
+                      style={styles.funcicon}
+                    />
                   </View>
                   <Text style={styles.PopLinkText}>链接</Text>
                 </View>
@@ -145,11 +148,10 @@ class Share extends Component {
 
                 <View style={styles.PopLinkItem}>
                   <View style={styles.iconview}>
-                   <Icon
-                     name="download"
-                     color='#3F3737'
-                     style={styles.funcicon}
-                     onPress={this.handledownload}
+                    <Icon
+                      name="download"
+                      style={styles.funcicon}
+                      onPress={this.handledownload}
                     />
                   </View>
                   <Text style ={styles.PopLinkText}>保存</Text>
@@ -168,12 +170,12 @@ class Share extends Component {
 
               <View style={styles.closeview}>
                 <Text
-                  style={styles.PopClose}
+                  style={styles.popClose}
                   onPress={this.props.onClick}>
                   取消
                 </Text>
-             </View>
-           </View>
+              </View>
+            </View>
           </View>
         </View>
       </Modal>
@@ -182,7 +184,7 @@ class Share extends Component {
 }
 
 const styles = StyleSheet.create({
-  PopContainer:{
+  PopContainer: {
     bottom: 0,
     top: 0,
     left: 0,
@@ -192,7 +194,7 @@ const styles = StyleSheet.create({
     width: width,
     height: height,
   },
-  touchabale:{
+  touchabale: {
     height: height * 0.7,
     width: width,
     position: 'absolute',
@@ -209,7 +211,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F9F9F9'
   },
-  PopLink:{
+  PopLink: {
     flexDirection: 'row',
     height: height * 0.15,
     position: 'absolute',
@@ -220,7 +222,7 @@ const styles = StyleSheet.create({
     borderColor:'#F6F0F0',
     width: width
   },
-  otheroption:{
+  otheroption: {
     flexDirection: 'row',
     height: height * 0.15,
     width: width,
@@ -228,13 +230,13 @@ const styles = StyleSheet.create({
     top: height * 0.15,
     alignItems: 'center',
   },
-  iconview:{
+  iconview: {
     height: 40,
     width: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  icon:{
+  icon: {
         fontSize:36
   },
   funcicon:{
@@ -257,7 +259,7 @@ const styles = StyleSheet.create({
     height: height * 0.07,
     backgroundColor: '#FFFFFF'
   },
-  PopClose: {
+  popClose: {
     fontSize: 18,
     margin: 7,
     textAlign: 'center',
