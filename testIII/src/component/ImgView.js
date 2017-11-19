@@ -35,7 +35,7 @@ export default class ViewImg extends Component {
       id_1: 0,
       id_2: 1,
       id_3: 2,
-      swipershow:false
+      swipershow: false
     };
 }
 
@@ -43,7 +43,7 @@ export default class ViewImg extends Component {
     setTimeout(() =>
     {
       this.setState({
-        swipershow:true
+        swipershow: true
       });
     },0)
   }
@@ -56,8 +56,8 @@ export default class ViewImg extends Component {
           <Modal
             visible={this.props.imgZoomVisible}
             transparent={true}
-            onRequestClose={() =>
-              {alert("Modal has been closed.")}
+            onRequestClose={() =>{
+              alert('Modal has been closed.')}
             }
           >
             <Swiper
@@ -92,7 +92,9 @@ export default class ViewImg extends Component {
           <Modal
             visible={this.props.imgZoomVisible}
             transparent={true}
-            onRequestClose={() => {alert("Modal has been closed.")}}
+            onRequestClose={() => {
+              alert("Modal has been closed.")
+            }}
           >
             <ImageZoom
               onSetImg={this.props.onSetImg}

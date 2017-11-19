@@ -1,26 +1,38 @@
 {
-    "name": "testIII",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node node_modules/react-native/local-cli/cli.js start",
-        "test": "jest"
-    },
-    "dependencies": {
-        "react": "16.0.0",
-        "react-native": "0.50.1",
-        "react-native-fs": "^2.8.5",
-        "react-native-photo-view": "^1.5.2",
-        "react-native-swiper": "^1.5.13",
-        "react-native-vector-icons": "^4.4.2"
-    },
-    "devDependencies": {
-        "babel-jest": "21.2.0",
-        "babel-preset-react-native": "4.0.0",
-        "jest": "21.2.1",
-        "react-test-renderer": "16.0.0"
-    },
-    "jest": {
-        "preset": "react-native"
-    }
+  "name": "sharepanel",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.0.0",
+    "react-native": "0.50.1",
+    "react-native-fs": "^2.8.5",
+    "react-native-photo-view": "^1.5.2",
+    "react-native-swiper": "^1.5.13",
+    "react-native-vector-icons": "^4.4.2"
+  },
+  "devDependencies": {
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "21.2.1",
+    "react-test-renderer": "16.0.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "description": "share component",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oykhaha/react-native-exercise.git"
+  },
+  "author": "oyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oykhaha/react-native-exercise/issues"
+  },
+  "homepage": "https://github.com/oykhaha/react-native-exercise#readme"
 }

@@ -17,9 +17,9 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-    imgZoomVisible: false,
-    shareVisible: false,
-    id: 0
+      imgZoomVisible: false,
+      shareVisible: false,
+      id: 0
   };
 }
 
@@ -31,8 +31,8 @@ export default class App extends Component {
   onSetImg = () => {
     this.setState({
       imgZoomVisible: !this.state.imgZoomVisible
-  });
- }
+    });
+  }
   setImg1 = () => {
     this.setState({
       imgZoomVisible: !this.state.imgZoomVisible,

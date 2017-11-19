@@ -30,7 +30,7 @@ let {
 export default class ImageZoom extends Component {
   render() {
     return (
-      <View style={styles.maincontainer}>
+      <View style={styles.mainContainer}>
         <View style={styles.content} >
           <PhotoView
             source={imgList[this.props.index]}
@@ -43,7 +43,7 @@ export default class ImageZoom extends Component {
           />
           <Text
             onLongPress={this.props.poptoShare}
-            style={styles.zIndextext}>
+            style={styles.zindexText}>
           </Text>
         </View>
                 {/*<View style={styles.footer}>
@@ -55,7 +55,7 @@ export default class ImageZoom extends Component {
 }
 
 const styles = StyleSheet.create({
-  maincontainer: {
+  mainContainer: {
     right: 0,
     left: 0,
     top: 0,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#070707',
   },
-  zIndextext: {
+  zindexText: {
     right: 0,
     left: 0,
     top: 0,
@@ -72,17 +72,5 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     backgroundColor: 'transparent'
-  },
-  footer: {
-    height: 30,
-    position: 'absolute',
-    bottom: 0,
-  },
-  footertext: {
-    fontSize: 13,
-    borderWidth: 1,
-    borderColor: '#9A9494',
-    backgroundColor: '#F6F0F0',
-    padding: 2
   }
 });

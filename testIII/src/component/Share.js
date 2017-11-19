@@ -29,7 +29,7 @@ const imgList = [
   'https://ooo.0o0.ooo/2017/03/31/58de0e9b28328.jpg'
 ]
 
-class Share extends Component {
+export default class Share extends Component {
   static propTypes = {
         // modalVisible: PropTypes.string.isRequired,
   }
@@ -37,33 +37,23 @@ class Share extends Component {
     const downloadDest = `${RNFS.DocumentDirectoryPath}/${((Math.random() * 1000) | 0)}.jpg`;
     const formUrl = imgList[this.props.index];
     const downloadFileOptions = {
-            fromUrl:formUrl, // URL to download file from
-            toFile:downloadDest, // Local filesystem path to save the file to
-            begin:(res)=>{
-              console.log('begin', res);
-              console.log('contentLength:', res.contentLength / 1024 / 1024, 'M');
-            },
-            progress:(res)=>{
-              let pro = res.bytesWritten / res.contentLength;
-              this.setState({
-                progressNum: pro,
-              });
-            }
-          };
+      fromUrl:formUrl, // URL to download file from
+      toFile:downloadDest, // Local filesystem path to save the file to
+    };
 
-          try{
-           const ret = RNFS.downloadFile(downloadFileOptions);
-           ret.promise
-           .then(res =>{
-              console.log('success', res);
-              console.log('file://' + downloadDest)
-            })
-           .catch(err =>{
-               console.log('err', err);
-            });
-           } catch(e) {
-              console.log(error);
-             }
+    try{
+      const ret = RNFS.downloadFile(downloadFileOptions);
+      ret.promise
+       .then(res => {
+         console.log('success', res);
+         console.log('file://' + downloadDest)
+       })
+       .catch(err =>{
+         console.log('err', err);
+        });
+       } catch(e) {
+           console.log(error);
+      }
   }
 
   render() {
@@ -74,104 +64,121 @@ class Share extends Component {
         transparent={true}
         onRequestClose={() => {alert("Modal has been closed.")}}
       >
-        <View style ={styles.PopContainer}>
+        <View style ={styles.popContainer}>
           <Text onPress={this.props.onClick} style={styles.touchabale}></Text>
-          <View style ={styles.PopDialog}>
-            <View style ={styles.PopSubContainer}>
+          <View style ={styles.popDialog}>
+            <View style ={styles.popSubContainer}>
 
-              <View style ={styles.PopLink}>
-                <View style ={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+              <View style ={styles.popLink}>
+                <View style ={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="wechat"
                       color="#45E69A"
                       style={styles.icon}
                     />
                   </View>
-                  <Text style={styles.PopLinkText}>微信</Text>
+                  <Text style={styles.popLinkText}>
+                    微信
+                  </Text>
                 </View>
 
-                <View style={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+                <View style={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="qq"
                       color="#2C9EEF"
                       style={styles.icon}
                     />
-                 </View>
-                 <Text style={styles.PopLinkText}>QQ好友</Text>
+                  </View>
+                  <Text style={styles.popLinkText}>
+                    QQ好友
+                  </Text>
                 </View>
 
-                <View style={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+                <View style={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="sina"
                       color="#F03131"
                       style={styles.icon}
                     />
                   </View>
-                  <Text style={styles.PopLinkText}>新浪</Text>
+                  <Text style={styles.popLinkText}>
+                    新浪
+                  </Text>
                 </View>
 
-                <View style={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+                <View style={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="github"
                       color="#3F3737"
                       style={styles.icon}
                     />
                   </View>
-                  <Text style={styles.PopLinkText}>github</Text>
+                  <Text style={styles.popLinkText}>
+                    github
+                  </Text>
                 </View>
               </View>
 
-              <View style={styles.otheroption}>
-                <View style={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+              <View style={styles.otherOption}>
+                <View style={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="link"
-                      style={styles.funcicon}
+                      style={styles.funcIcon}
                     />
                   </View>
-                  <Text style={styles.PopLinkText}>链接</Text>
+                  <Text style={styles.popLinkText}>
+                    链接
+                  </Text>
                 </View>
 
-                <View style={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+                <View style={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="report"
-                      style={styles.funcicon}
+                      style={styles.funcIcon}
                     />
                   </View>
-                  <Text style ={styles.PopLinkText}>举报</Text>
+                  <Text style ={styles.popLinkText}>
+                    举报
+                  </Text>
                 </View>
 
-                <View style={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+                <View style={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="download"
-                      style={styles.funcicon}
+                      style={styles.funcIcon}
                       onPress={this.handledownload}
                     />
                   </View>
-                  <Text style ={styles.PopLinkText}>保存</Text>
+                  <Text style ={styles.popLinkText}>
+                    保存
+                  </Text>
                 </View>
 
-                <View style ={styles.PopLinkItem}>
-                  <View style={styles.iconview}>
+                <View style ={styles.popLinkItem}>
+                  <View style={styles.iconView}>
                     <Icon
                       name="mail4"
-                      style={styles.funcicon}
+                      style={styles.funcIcon}
                     />
                   </View>
-                  <Text style={styles.PopLinkText}>邮件</Text>
+                  <Text style={styles.popLinkText}>
+                    邮件
+                  </Text>
                 </View>
               </View>
 
-              <View style={styles.closeview}>
+              <View style={styles.closeView}>
                 <Text
                   style={styles.popClose}
-                  onPress={this.props.onClick}>
+                  onPress={this.props.onClick}
+                >
                   取消
                 </Text>
               </View>
@@ -184,7 +191,7 @@ class Share extends Component {
 }
 
 const styles = StyleSheet.create({
-  PopContainer: {
+  popContainer: {
     bottom: 0,
     top: 0,
     left: 0,
@@ -200,18 +207,18 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
   },
-  PopDialog: {
+  popDialog: {
     position: 'absolute',
     bottom: 20,
     width: width,
     height: height * 0.37,
      backgroundColor: 'white'
   },
-  PopSubContainer: {
+  popSubContainer: {
     flex: 1,
     backgroundColor: '#F9F9F9'
   },
-  PopLink: {
+  popLink: {
     flexDirection: 'row',
     height: height * 0.15,
     position: 'absolute',
@@ -222,7 +229,7 @@ const styles = StyleSheet.create({
     borderColor:'#F6F0F0',
     width: width
   },
-  otheroption: {
+  otherOption: {
     flexDirection: 'row',
     height: height * 0.15,
     width: width,
@@ -230,29 +237,29 @@ const styles = StyleSheet.create({
     top: height * 0.15,
     alignItems: 'center',
   },
-  iconview: {
+  iconView: {
     height: 40,
     width: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
   icon: {
-        fontSize:36
+    fontSize:36
   },
-  funcicon:{
+  funcIcon:{
     fontSize:32
   },
-  PopLinkItem: {
+  popLinkItem: {
     marginTop: 5,
     width:width*0.25,
     alignItems: 'center',
   },
-  PopLinkText: {
+  popLinkText: {
     textAlign: 'center',
     padding: 5,
     fontSize:12
   },
-  closeview: {
+  closeView: {
     position: 'absolute',
     bottom: 0,
     width: width * 1,
@@ -265,5 +272,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }
 });
-
-export default Share;
