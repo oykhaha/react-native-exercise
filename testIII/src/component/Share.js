@@ -36,7 +36,7 @@ class Share extends Component {
   handledownload = () => {
     const downloadDest = `${RNFS.DocumentDirectoryPath}/${((Math.random() * 1000) | 0)}.jpg`;
     const formUrl = imgList[this.props.index];
-    const DownloadFileOptions = {
+    const downloadFileOptions = {
             fromUrl:formUrl, // URL to download file from
             toFile:downloadDest, // Local filesystem path to save the file to
             begin:(res)=>{
@@ -52,7 +52,7 @@ class Share extends Component {
           };
 
           try{
-           const ret = RNFS.downloadFile(DownloadFileOptions);
+           const ret = RNFS.downloadFile(downloadFileOptions);
            ret.promise
            .then(res =>{
               console.log('success', res);
