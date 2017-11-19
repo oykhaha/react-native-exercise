@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
         width: width,
-        height: height * 0.5,
+        height: height * 0.37,
         backgroundColor: 'white'
     },
     PopSubContainer: {
@@ -145,23 +145,22 @@ const styles = StyleSheet.create({
     },
     PopLink: {
         flexDirection: 'row',
-        height: height * 0.21,
+        height: height * 0.15,
         position: 'absolute',
         top: 0,
         left: 0,
         alignItems: 'center',
         borderBottomWidth: 1,
         borderColor:'#F6F0F0',
-        justifyContent:'space-around',
         width: width
 
     },
     otheroption: {
         flexDirection: 'row',
-        height: height * 0.21,
+        height: height * 0.15,
         width: width,
         position: 'absolute',
-        top: height * 0.21,
+        top: height * 0.15,
         alignItems: 'center',
     },
 
@@ -195,12 +194,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         width: width * 1,
-        height: height * 0.08,
+        height: height * 0.07,
         backgroundColor: '#FFFFFF'
     },
     PopClose: {
-        fontSize: 20,
-        margin: 10,
+        fontSize: 18,
+        margin: 7,
         textAlign: 'center',
 
     }
