@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Image,
+  Dimensions,
   StyleSheet,
   ScrollView
 } from 'react-native';
@@ -15,7 +16,6 @@ import {
 import icomoonConfig from '../../config/iconImg';
 import RNFS from 'react-native-fs';
 
-let Dimensions = require('Dimensions');
 let {
   width,
   height
@@ -23,11 +23,11 @@ let {
 
 const Icon = createIconSetFromIcoMoon(icomoonConfig);
 
-const imgList = [
+/*const imgList = [
   'https://avatars2.githubusercontent.com/u/7685233?v=3&s=460',
   'https://ooo.0o0.ooo/2017/03/31/58de0e9b287f6.jpg',
   'https://ooo.0o0.ooo/2017/03/31/58de0e9b28328.jpg'
-]
+]*/
 
 export default class Share extends Component {
   static propTypes = {
@@ -35,7 +35,7 @@ export default class Share extends Component {
   }
   handledownload = () => {
     const downloadDest = `${RNFS.DocumentDirectoryPath}/${((Math.random() * 1000) | 0)}.jpg`;
-    const formUrl = imgList[this.props.index];
+    const formUrl = this.props.source;
     const downloadFileOptions = {
       fromUrl:formUrl, // URL to download file from
       toFile:downloadDest, // Local filesystem path to save the file to

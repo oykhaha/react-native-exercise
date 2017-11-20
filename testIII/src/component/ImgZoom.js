@@ -12,16 +12,6 @@ import {
 } from 'react-native';
 import PhotoView from 'react-native-photo-view';
 
-const loading_1 = require('../img/1.png')
-const loading_2 = require('../img/2.jpg')
-const loading_3 = require('../img/3.jpg')
-
-const imgList = [
-  loading_1,
-  loading_2,
-  loading_3
-]
-
 let {
   width,
   height
@@ -33,7 +23,7 @@ export default class ImageZoom extends Component {
       <View style={styles.mainContainer}>
         <View style={styles.content} >
           <PhotoView
-            source={imgList[this.props.index]}
+            source={this.props.source}
             minimumZoomScale={0.5}
             maximumZoomScale={3}
             onTap={this.props.onSetImg}

@@ -18,23 +18,11 @@ let {
   height
 } = Dimensions.get('window');
 
-const loading_1 = require('../img/1.png')
-const loading_2 = require('../img/2.jpg')
-const loading_3 = require('../img/3.jpg')
-
-const imgList = [
-  loading_1,
-  loading_2,
-  loading_3
-]
 
 export default class ViewImg extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id_1: 0,
-      id_2: 1,
-      id_3: 2,
       swipershow: false
     };
 }
@@ -68,11 +56,11 @@ export default class ViewImg extends Component {
               loop={false}
             >
               {
-                imgList.map((item,i)=>
+                this.props.sourceUrl.map((item,i)=>
                   <ImageZoom
                     onSetImg={this.props.onSetImg}
                     poptoShare={this.props.poptoShare}
-                    index={i}
+                    source={item}
                     key={i}
                   />)
               }
@@ -96,11 +84,7 @@ export default class ViewImg extends Component {
               alert("Modal has been closed.")
             }}
           >
-            <ImageZoom
-              onSetImg={this.props.onSetImg}
-              poptoShare={this.props.poptoShare}
-              index={this.state.id_1}
-            />
+            <Text>404 NOT FOUND</Text>
           </Modal>
         );
       }

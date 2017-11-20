@@ -1,4 +1,3 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import sharepanel from './sharepanel';
 
-AppRegistry.registerComponent('testIII', () => App);
+module.exports = sharepanel
