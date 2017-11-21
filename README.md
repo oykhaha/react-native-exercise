@@ -9,4 +9,4 @@ npm install sharepanel
 
 API:               类型              说明           
 sourceUrl(必填)   Array            uri数组  
-index              number           起始序号
+
