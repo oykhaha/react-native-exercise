@@ -27,8 +27,12 @@ export default class ImageZoom extends Component {
 
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <View style={styles.content} >
+      <View
+        style={styles.mainContainer}
+      >
+        <View
+          style={styles.content}
+        >
           <PhotoView
             source={this.props.source}
             minimumZoomScale={0.5}

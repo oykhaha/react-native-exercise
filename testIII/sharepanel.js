@@ -56,7 +56,9 @@ export default class sharepanel extends Component {
       index
     } = this.props;
     return (
-      <View style={styles.content}>
+      <View
+        style={styles.content}
+      >
         <ViewImg
           index={this.state.index}
           imgZoomVisible={this.state.imgZoomVisible}
@@ -70,10 +72,12 @@ export default class sharepanel extends Component {
           index={this.state.index}
           onClick={this.poptoShare}
         />
-         <View style={styles.subcontent}>
-           {
+        <View
+          style={styles.subcontent}
+        >
+          {
             this.props.sourceUrl.map((item,i) => {
-              return(
+              return (
                 <View
                   style={styles.imgItem}
                   key={i}
@@ -91,7 +95,6 @@ export default class sharepanel extends Component {
             })
           }
          </View>
-
       </View>
     );
   }

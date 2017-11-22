@@ -48,7 +48,9 @@ export default class ViewImg extends Component {
   render() {
     if (this.state.swipershow) {
       return (
-        <View style={{position:'absolute'}}>
+        <View
+          style={{position:'absolute'}}
+        >
           <Modal
             visible={this.props.imgZoomVisible}
             transparent={true}
