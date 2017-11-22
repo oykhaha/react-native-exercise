@@ -35,7 +35,7 @@ export default class ViewImg extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     setTimeout(() =>
     {
       this.setState({
@@ -98,7 +98,7 @@ export default class ViewImg extends Component {
             <Text>404 NOT FOUND</Text>
           </Modal>
         );
-      }
+    }
   }
 }
 

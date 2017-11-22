@@ -54,7 +54,7 @@ export default class sharepanel extends Component {
     const {
       sourceUrl,
       index
-    }  = this.props;
+    } = this.props;
     return (
       <View style={styles.content}>
         <ViewImg
